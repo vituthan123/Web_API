@@ -1,0 +1,48 @@
+version: "3.9"
+services:
+  mysql_service:
+    container_name: mysql_server
+    build: ./mysql
+    restart: always
+    networks:
+      mynet:
+        ipv4_address: 6.6.0.2
+    ports:
+      - "6603:3306"
+    
+
+  data_crawling:
+    container_name: data_craw
+    build: ./data_crawling
+    networks:
+      mynet:
+        ipv4_address: 6.6.0.3
+    ports:
+      - "5556:5555"
+    
+  mysql_api:
+    container_name: api
+    build: ./mysql_api
+    networks:
+      mynet:
+        ipv4_address: 6.6.0.4
+    ports:
+      - "9000:8000"
+  web_page:
+    container_name: web_page
+    build: ./web_page
+    depends_on:
+      - mysql_api
+    networks:
+      mynet:
+        ipv4_address: 6.6.0.5
+    ports:
+      - "8080:80"
+
+
+networks:
+  mynet:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 6.6.0.0/16

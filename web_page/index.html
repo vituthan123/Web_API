@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'unsafe-eval' 'self'">
+
+    <title>Trang chủ</title>
+    <link rel="icon" type="image/png" href="/static/assets/iconlogo.png" sizes="16x16">
+    <link rel="stylesheet" href="/static/css/home.css">
+    <link rel="stylesheet" href="/static/assets/fonts/themify-icons/themify-icons.css">
+</head>
+<body>
+    <div id="main">
+        <div id="header">
+            <div class="head-left">
+                <a href="/"><img src="/static/assets/logo.png" alt=""></a>
+                <span>Tốt & Nhanh</span>
+            </div>
+            <div class="head-right">
+                <div class="head-right-top">
+                    <!-- <form id="search-form" action="/title" , method="POST"></form> -->
+                    <form id="search-form" class="frm-search" method="post">
+                        <i class="ti-search"></i>
+                        <input id="input-search" class="input-search" type="text" name="key" placeholder="Giao nhanh 2H & đúng khung giờ">
+                        <button class="btn-search" type="submit">Tìm kiếm</button>
+                    </form>
+                    <div class="nav">
+                        <button class="btn btn-home" type="button">
+                            <i class="icon ti-home"></i>
+                            Trang chủ
+                        </button>
+                        <div class="div-nav">
+                            <button class="btn btn-account" type="button">
+                                <i class="icon ti-face-smile"></i>
+                                Tài khoản
+                            </button>
+                            <ul class="subnav">
+                                <li><a href="#">Thông tin tài khoản</a></li>
+                                <li><a href="#">Đơn hàng của tôi</a></li>
+                                <li><a href="#">Trung tâm hỗ trợ</a></li>
+                                <li><a href="#">Đăng xuất</a></li>
+                            </ul>
+                        </div>
+                        <a class="nav-cart" href="">
+                            <i class="ti-shopping-cart"></i>
+                            <span class="quantity-product-cart">0</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="head-right-bottom">
+                        <i class="ti-location-pin"></i>
+                        <h4>Giao đến:</h4>
+                        <a href="">Q.Hải Châu, P.Hải Châu, Đà Nẵng</a>
+                </div>
+            </div>
+        </div>
+        <div id="nav-free-returns">
+            <a href="">
+                <img src="/static/assets/30ngay.png" alt="">
+                <strong>được đổi ý và miễn phí trả hàng</strong>
+                <i class="ti-angle-right"></i>
+            </a>
+        </div>
+        <div id="content">
+            <div class="div-content">
+             
+                <div class="left-content">
+                    <div class="list-cate">
+                        <div class="item-content-cate">
+                            <h3>Danh mục sản phẩm</h3>
+                        </div>
+                        <div id="category-list" class="item-content-cate" onload="getParentCate(1, 10);">
+                              
+                        </div>
+                    </div>
+                </div>
+                <div class="right-content">
+                    <div class="product-content-header">
+                        <div class="title-product">
+                            <h2 id="title-product">Tất Cả Sản Phẩm</h2>
+                        </div>
+                        <div class="banner-product">
+                            <button class="btn-slide btn-back-slide" onclick="backSlide()"><i class="ti-angle-left"></i></button>
+                            <div class="banner-slides">
+                                <img src="/static/assets/banner1.png" class="slide">
+                                <img src="/static/assets/banner2.png" class="slide">
+                                <img src="/static/assets/banner3.png" class="slide">
+                                <img src="/static/assets/banner4.png" class="slide">
+                            </div>
+                            <button class="btn-slide btn-next-slide"  onclick="nextSlide()"><i class="ti-angle-right"></i></button>
+                        </div>
+
+                    </div>
+                    <div class="product-content-bottom">
+                        <div id="item-product" class="item-product">
+                        
+                        </div>
+                    </div>
+                    <div id="product__pagination" class="product__pagination">
+                        <!-- Trước danh sách sản phẩm -->
+                        <div class="left__pagination">
+                
+                        </div>
+                        <div class="center__pagination"></div>
+                        <!-- Sau danh sách sản phẩm -->
+                        <div class="right__pagination">
+    
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </div>
+
+    <script src="/static/scripts/banner-product.js"></script>
+    <script src="/static/scripts/setupData.js"></script>
+</body>
+</html>
